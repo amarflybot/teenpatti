@@ -7,7 +7,7 @@ import java.util.Collections;
 public class Card implements Comparable<Card> {
 
 
-    private static final int ACE_VAL = 100;
+    private static final int ACE_VAL = 14;
     private int val;
     private Suit suit;
 
@@ -74,7 +74,8 @@ public class Card implements Comparable<Card> {
     }
 
     public boolean isAdjacentTo(Card c) {
-        return Math.abs(this.val - c.val) == 1;
+
+        return (Math.abs(this.val - c.val) == 1 || Math.abs(this.getValForComparison() - c.getValForComparison()) == 1);
     }
 
 }

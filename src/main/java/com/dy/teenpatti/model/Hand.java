@@ -82,6 +82,7 @@ public class Hand implements Comparable<Hand> {
     private boolean isSeq() {
         // no two cards equal
         if (isTrio()) return false;
+        if (isPair()) return false;
 
         int adjCount = 0;
         // two pairs need to be adjacent
